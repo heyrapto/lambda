@@ -1,5 +1,22 @@
 import { useState } from "react";
 import { Footer } from "~/components/sections/footer";
+import {
+  FiChevronDown,
+  FiChevronRight,
+  FiHome,
+  FiBookOpen,
+  FiFileText,
+  FiKey,
+  FiCode,
+} from "react-icons/fi";
+import {
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiFlutter,
+  SiUnity,
+  SiKotlin,
+} from "react-icons/si";
 
 export const meta = () => [
   { title: "Whitepaper | Lambda" },
@@ -13,52 +30,110 @@ export const meta = () => [
 interface NavItem {
   id: string;
   label: string;
+  icon?: React.ReactNode;
   children?: NavItem[];
 }
 
-const navigationItems: NavItem[] = [
+interface NavigationSection {
+  section?: string;
+  items: NavItem[];
+}
+
+const navigationSections: NavigationSection[] = [
   {
-    id: "overview",
-    label: "Overview",
-    children: [
-      { id: "executive-summary", label: "Executive Summary" },
-      { id: "introduction", label: "Introduction" },
-      { id: "problem-statement", label: "Problem Statement" },
+    items: [
+      {
+        id: "overview",
+        label: "Overview",
+        icon: <FiFileText className="w-4 h-4" />,
+        children: [
+          { id: "executive-summary", label: "Executive Summary" },
+          { id: "introduction", label: "Introduction" },
+          { id: "problem-statement", label: "Problem Statement" },
+        ],
+      },
     ],
   },
   {
-    id: "framework",
-    label: "Framework",
-    children: [
-      { id: "methodology", label: "Methodology" },
-      { id: "architecture", label: "Architecture" },
-      { id: "evaluation-metrics", label: "Evaluation Metrics" },
+    items: [
+      {
+        id: "framework",
+        label: "Framework",
+        icon: <FiBookOpen className="w-4 h-4" />,
+        children: [
+          { id: "methodology", label: "Methodology" },
+          { id: "architecture", label: "Architecture" },
+          { id: "evaluation-metrics", label: "Evaluation Metrics" },
+        ],
+      },
     ],
   },
   {
-    id: "technical",
-    label: "Technical Details",
-    children: [
-      { id: "implementation", label: "Implementation" },
-      { id: "scalability", label: "Scalability" },
-      { id: "security", label: "Security & Privacy" },
+    section: "APIs",
+    items: [
+      {
+        id: "api-key",
+        label: "Get an API key",
+        icon: <FiKey className="w-4 h-4" />,
+      },
+      {
+        id: "api-reference",
+        label: "API Reference V2",
+        icon: <FiCode className="w-4 h-4" />,
+        children: [
+          { id: "methodology", label: "Getting Started" },
+          { id: "architecture", label: "Room & Session API" },
+          { id: "scalability", label: "Live Meetings API" },
+          { id: "security", label: "Get Metrics API" },
+          { id: "implementation", label: "Get Recordings API" },
+        ],
+      },
     ],
   },
   {
-    id: "case-studies",
-    label: "Case Studies",
-    children: [
-      { id: "enterprise-ai", label: "Enterprise AI Deployment" },
-      { id: "llm-evaluation", label: "LLM Evaluation" },
-      { id: "real-world-results", label: "Real-World Results" },
-    ],
-  },
-  {
-    id: "conclusion",
-    label: "Conclusion",
-    children: [
-      { id: "future-work", label: "Future Work" },
-      { id: "references", label: "References" },
+    section: "SDKs",
+    items: [
+      {
+        id: "javascript-sdk",
+        label: "Javascript",
+        icon: <SiJavascript className="w-4 h-4" />,
+        children: [
+          { id: "implementation", label: "Quickstart" },
+          { id: "evaluation-metrics", label: "Methods" },
+          { id: "scalability", label: "Walkthrough" },
+          { id: "security", label: "Start from an example" },
+        ],
+      },
+      {
+        id: "reactjs-sdk",
+        label: "ReactJS",
+        icon: <SiReact className="w-4 h-4" />,
+      },
+      {
+        id: "react-native-sdk",
+        label: "React Native",
+        icon: <SiReact className="w-4 h-4" />,
+      },
+      {
+        id: "server-sdk",
+        label: "Server-SDK",
+        icon: <SiNodedotjs className="w-4 h-4" />,
+      },
+      {
+        id: "flutter-sdk",
+        label: "Flutter",
+        icon: <SiFlutter className="w-4 h-4" />,
+      },
+      {
+        id: "unity-sdk",
+        label: "Unity",
+        icon: <SiUnity className="w-4 h-4" />,
+      },
+      {
+        id: "kotlin-sdk",
+        label: "Kotlin",
+        icon: <SiKotlin className="w-4 h-4" />,
+      },
     ],
   },
 ];
@@ -559,6 +634,7 @@ export default function WhitepaperPage() {
     Record<string, boolean>
   >({
     overview: true,
+    framework: true,
   });
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -569,21 +645,34 @@ export default function WhitepaperPage() {
     }));
   };
 
-  const filteredNavItems = navigationItems.map((item) => {
-    const matchesSearch = item.label
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase());
-    const filteredChildren = item.children?.filter((child) =>
-      child.label.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    const hasMatchingChildren = filteredChildren && filteredChildren.length > 0;
+  const filteredNavSections = navigationSections.map((section) => ({
+    ...section,
+    items: section.items
+      .map((item) => {
+        const matchesSearch = item.label
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
+        const filteredChildren = item.children?.filter((child) =>
+          child.label.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        const hasMatchingChildren =
+          filteredChildren && filteredChildren.length > 0;
 
-    return {
-      ...item,
-      children: filteredChildren,
-      matches: matchesSearch || hasMatchingChildren,
-    };
-  });
+        return {
+          ...item,
+          children: filteredChildren,
+          matches: matchesSearch || hasMatchingChildren,
+        };
+      })
+      .filter((item) => item.matches),
+  })).filter((section) => section.items.length > 0);
+
+  const handleItemClick = (itemId: string) => {
+    // Only set selectedId if content exists for this item
+    if (whitepaperContent[itemId]) {
+      setSelectedId(itemId);
+    }
+  };
 
   const selectedContent =
     whitepaperContent[selectedId] || whitepaperContent["executive-summary"];
@@ -625,44 +714,88 @@ export default function WhitepaperPage() {
                   </div>
 
                   {/* Navigation */}
-                  <nav className="space-y-2">
-                    {filteredNavItems.map((item) =>
-                      item.matches ? (
-                        <div key={item.id}>
-                          <button
-                            onClick={() => toggleSection(item.id)}
-                            className="w-full flex items-center justify-between px-3 py-2 font-semibold text-gray-900 hover:bg-gray-100 rounded transition-colors text-sm"
-                          >
-                            <span>{item.label}</span>
-                            <span
-                              className={`transition-transform duration-200 text-xs ${
-                                expandedSections[item.id] ? "rotate-180" : ""
-                              }`}
-                            >
-                              ▼
-                            </span>
-                          </button>
+                  <nav className="space-y-6">
+                    {filteredNavSections.map((section) => (
+                      <div key={section.section}>
+                        {/* Section Header */}
+                        {section.section && (
+                          <span className="px-3 py-2 text-sm font-bold text-gray-900 uppercase tracking-wide">
+                            {section.section}
+                          </span>
+                        )}
+                        
+                        {/* Section Items */}
+                        <div className="space-y-1">
+                          {section.items.map((item) => (
+                            <div key={item.id}>
+                              {item.children ? (
+                                <>
+                                  <button
+                                    onClick={() => toggleSection(item.id)}
+                                    className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded transition-all duration-200 text-gray-900 hover:bg-gray-100"
+                                  >
+                                    <div className="flex items-center gap-2">
+                                      {item.icon && (
+                                        <span className="shrink-0">
+                                          {item.icon}
+                                        </span>
+                                      )}
+                                      <span>{item.label}</span>
+                                    </div>
+                                    {expandedSections[item.id] ? (
+                                      <FiChevronDown className="w-4 h-4 shrink-0" />
+                                    ) : (
+                                      <FiChevronRight className="w-4 h-4 shrink-0" />
+                                    )}
+                                  </button>
 
-                          {expandedSections[item.id] && item.children && (
-                            <div className="ml-2 space-y-1 border-l border-gray-300">
-                              {item.children.map((child) => (
+                                  {/* Children with smooth transition */}
+                                  <div
+                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                      expandedSections[item.id]
+                                        ? "max-h-[500px] opacity-100"
+                                        : "max-h-0 opacity-0"
+                                    }`}
+                                  >
+                                    <div className="ml-6 space-y-0.5 mt-1 border-l-2 border-gray-200 pl-3">
+                                      {item.children.map((child) => (
+                                        <button
+                                          key={child.id}
+                                          onClick={() => handleItemClick(child.id)}
+                                          className={`w-full text-left px-2 py-1.5 text-sm rounded transition-colors ${
+                                            selectedId === child.id
+                                              ? "bg-blue-50 text-blue-600 font-medium"
+                                              : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                          }`}
+                                        >
+                                          {child.label}
+                                        </button>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </>
+                              ) : (
                                 <button
-                                  key={child.id}
-                                  onClick={() => setSelectedId(child.id)}
-                                  className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${
-                                    selectedId === child.id
-                                      ? "bg-blue-50 text-blue-600 font-semibold"
-                                      : "text-gray-700 hover:bg-gray-100"
+                                  onClick={() => handleItemClick(item.id)}
+                                  className={`w-full flex items-center gap-2 px-3 py-2 text-sm font-medium rounded transition-all duration-200 ${
+                                    selectedId === item.id
+                                      ? "bg-gray-900 text-white"
+                                      : "text-gray-900 hover:bg-gray-100"
                                   }`}
                                 >
-                                  {child.label}
+                                  {item.icon && (
+                                    <span className="shrink-0">
+                                      {item.icon}
+                                    </span>
+                                  )}
+                                  <span className="text-left">{item.label}</span>
                                 </button>
-                              ))}
+                              )}
                             </div>
-                          )}
+                          ))}
                         </div>
-                      ) : null
-                    )}
+                      </div>
+                    ))}
                   </nav>
                 </div>
               </aside>
