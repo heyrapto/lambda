@@ -733,7 +733,7 @@ export default function WhitepaperPage() {
 
   return (
     <>
-      <main className="main-wrapper is-padding-start">
+      <main className="main-wrapper is-padding-start min-h-screen">
         <section className="pb-12">
           <div className="padding-global">
             {/* Header */}
