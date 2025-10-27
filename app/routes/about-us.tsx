@@ -82,7 +82,7 @@ export default function AboutUsPage() {
                 >
                   <p className="about-who_text text-size-regular">
                     Our experience with AI testing problems inspired the start
-                    of Scorecard. We found companies racing to build AI, relying
+                    of Lambda. We found companies racing to build AI, relying
                     on spreadsheets and gut reactions. This approach introduces
                     a lot of risk and leaves opportunities on the table. Our
                     team combines expertise in AI testing and practical business
@@ -91,7 +91,7 @@ export default function AboutUsPage() {
                     ship products quickly and confidently.
                     <br />
                     <br />
-                    We built Scorecard to replace subjective reviews with
+                    We built Lambda to replace subjective reviews with
                     structured testing. Our vision is to help companies improve
                     testing and upgrade AI products with continuous evaluation
                     and smart recommendations.

@@ -94,7 +94,7 @@ export default function CareersPage() {
                     className="section-heading-main_content text-wrap-balance"
                   >
                     <p className="section-heading-main_text text-size-medium">
-                      At Scorecard, we’re passionate about empowering people to
+                      At Lambda, we’re passionate about empowering people to
                       build and deliver dependable AI products. We provide the
                       platform to support teams from prototype to production for
                       Large Language Models (LLMs).

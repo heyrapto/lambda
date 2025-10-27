@@ -46,7 +46,7 @@ Agent Mode significantly disrupts traditional AI interaction paradigms, offering
 
 ### Transformative Implications for AI Evaluation
 
-The comprehensive capabilities of Agent Mode substantially increase the complexity of evaluating AI performance and reliability. Factors such as state management, reproducibility, robust guardrails, and data privacy become even more critical. This complexity underscores the essential role platforms like Scorecard play in reliably evaluating and benchmarking sophisticated agents like Agent Mode.
+The comprehensive capabilities of Agent Mode substantially increase the complexity of evaluating AI performance and reliability. Factors such as state management, reproducibility, robust guardrails, and data privacy become even more critical. This complexity underscores the essential role platforms like λ play in reliably evaluating and benchmarking sophisticated agents like Agent Mode.
 
 ### What's Next for Agent Mode?
 
@@ -54,7 +54,7 @@ OpenAI plans phased expansions to wider user groups, including Plus, Team, and E
 
 ### Conclusion: A Revolutionary Step Forward
 
-Agent Mode represents a significant leap toward true digital autonomy, dramatically elevating productivity and innovation potential. At Scorecard, we eagerly anticipate the continued evolution of Agent Mode, actively exploring its profound impacts.
+Agent Mode represents a significant leap toward true digital autonomy, dramatically elevating productivity and innovation potential. At λ, we eagerly anticipate the continued evolution of Agent Mode, actively exploring its profound impacts.
 
 Stay tuned for more insights on how Agent Mode reshapes digital productivity!`,
   },
@@ -63,7 +63,7 @@ Stay tuned for more insights on how Agent Mode reshapes digital productivity!`,
     url: "scorecard-mcp-2-0-1000-lines---70",
     image:
       "https://cdn.prod.website-files.com/682dd348fd1fba47863dde07/685d7ad8a5e14b9a8fdbeabb_Screenshot%202025-06-26%20at%2009.52.33.png",
-    title: "Scorecard MCP 2.0: 1,000 Lines -> 70",
+    title: "λ MCP 2.0: 1,000 Lines -> 70",
     date: "June 30, 2025",
     readTime: 3,
     category: "News",
@@ -97,7 +97,7 @@ const authHandler = withMcpAuth(
 // Tool handlers get authenticated client automatically
 async (params, context) => {
   const accessToken = params.authInfo.token;
-  const client = new Scorecard({
+  const client = new λ({
     baseURL: process.env.NEXT_PUBLIC_API_URL + "/api/v2",
     fetch: async (url, init) => {
       const headers = new Headers(init?.headers);
@@ -121,12 +121,12 @@ The implementation builds on three key technologies:
 
 ## Getting Started
 
-For Scorecard users, connecting is now simpler than ever. Replace the placeholder \`MCP_SERVER_URL\` in your \`MCP.json\` file with the actual [URL value provided on GitHub](https://github.com/scorecard-ai/scorecard-mcp) e.g.:
+For λ users, connecting is now simpler than ever. Replace the placeholder \`MCP_SERVER_URL\` in your \`MCP.json\` file with the actual [URL value provided on GitHub](https://github.com/scorecard-ai/scorecard-mcp) e.g.:
 
 \`\`\`javascript
 {
   "mcpServers": {
-    "scorecard": {
+    "lambda": {
       "url": "MCP_SERVER_URL"
     }
   }
@@ -135,9 +135,9 @@ For Scorecard users, connecting is now simpler than ever. Replace the placeholde
 
 **Note:** Claude web/desktop and Cline are not currently supported. We're working with Anthropic and the Clerk team to add support soon.
 
-## What's Next for Scorecard MCP
+## What's Next for λ MCP
 
-We're incredibly excited by how the new spec has lowered the friction of building and deploying MCP servers. Scorecard's evaluation tools are now accessible from any MCP client with minimal configuration and rock-solid authentication.
+We're incredibly excited by how the new spec has lowered the friction of building and deploying MCP servers. λ's evaluation tools are now accessible from any MCP client with minimal configuration and rock-solid authentication.
 
 For developers interested in the implementation details, check out our [open source code](https://github.com/scorecard-ai/scorecard-mcp), [Clerk's MCP demo](https://github.com/clerk/mcp-demo/tree/main), and [Vercel's adapter](https://github.com/vercel/mcp-adapter). The future of AI development is getting simpler, and we're here for it.`,
   },
@@ -146,11 +146,11 @@ For developers interested in the implementation details, check out our [open sou
     url: "introducing-scorecards-mcp-server",
     image:
       "https://cdn.prod.website-files.com/682dd348fd1fba47863dde07/6838a44e918cafc58c5093c3_Screenshot%202025-05-29%20at%2011.15.37.png",
-    title: "Introducing Scorecard's MCP Server",
+    title: "Introducing λ's MCP Server",
     date: "May 30, 2025",
     readTime: 3,
     category: "News",
-    content: `We're excited to announce the launch of the first remote Model Context Protocol (MCP) server for evaluation. Scorecard's AI evaluation and experimentation tools are now available directly within your favorite AI assistants. Today we're open-sourcing this implementation at [https://github.com/scorecard-ai/scorecard-mcp](https://github.com/scorecard-ai/scorecard-mcp), developed in close collaboration with our partners at Clerk, Stainless, and Cloudflare.
+    content: `We're excited to announce the launch of the first remote Model Context Protocol (MCP) server for evaluation. λ's AI evaluation and experimentation tools are now available directly within your favorite AI assistants.  Today we're open-sourcing this implementation at [https://github.com/scorecard-ai/scorecard-mcp](https://github.com/scorecard-ai/scorecard-mcp), developed in close collaboration with our partners at Clerk, Stainless, and Cloudflare.
 
 In the spirit of our earlier eval [partnership with Anthropic](https://www.scorecard.io/blog/scorecard-anthropic), we're introducing this MCP server implementation as another step forward to empower organizations to evaluate and improve your AI agent's performance.
 
@@ -281,10 +281,9 @@ We're implementing the [MCP draft spec](https://modelcontextprotocol.io/specific
     content: `
 
 ### Introducing AgentEval.org: An Open-Source Benchmarking Initiative for AI Agent Evaluation
-
 As large language models (LLMs) become the backbone of applications across industries, it's becoming increasingly difficult for companies and users to understand what good AI performance looks like. That's why we're excited to announce **AgentEval.org**, the first open-source repository for AI benchmarks — an open, public resource providing datasets, best practices, and assessment methodologies.
 
-![AgentEval Powered by Scorecard](https://cdn.prod.website-files.com/682dd348fd1fba47863dde07/682dd6068b4ba393c82c8811_4lczAclL2iKcrbuhjYFhiJvLK0.png)
+...![AgentEval Powered by λ](https://cdn.prod.website-files.com/682dd348fd1fba47863dde07/682dd6068b4ba393c82c8811_4lczAclL2iKcrbuhjYFhiJvLK0.png)
 
 ## Where We're Starting: Open Benchmarking for the Legal Industry
 
@@ -333,7 +332,7 @@ The standards we set for AI evaluation now will influence its adoption and impac
     url: "scorecard-anthropic",
     image:
       "https://cdn.prod.website-files.com/682dd348fd1fba47863dde07/682dd6069edf86fdae5ba4ef_uKCvET5n9Ykp5cGF6untINP7Etk.png",
-    title: "Scorecard ❤️ Anthropic",
+    title: "λ ❤️ Anthropic",
     date: "November 25, 2024",
     readTime: 3,
     category: "News",

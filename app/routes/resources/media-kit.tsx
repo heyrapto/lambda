@@ -5,7 +5,7 @@ const mediaKitItems = [
     id: "brand-assets",
     title: "Brand Assets",
     description:
-      "Complete collection of Scorecard brand assets including logos, icons, and brand guidelines for official use.",
+      "Complete collection of Lambda brand assets including logos, icons, and brand guidelines for official use.",
     items: [
       {
         id: "logos-without-bg",
@@ -143,7 +143,7 @@ export default function MediaKitPage() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-                Download official Scorecard brand assets, logos, and marketing
+                Download official Lambda brand assets, logos, and marketing
                 materials. All assets are provided for media, partner, and
                 developer use.
               </p>

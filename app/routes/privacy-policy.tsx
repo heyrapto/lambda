@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
                 </div>
                 <div className="legal-page_content">
                   <div className="legal-rich-text w-richtext">
-                    <p>Welcome to Scorecard AI</p>
+                    <p>Welcome to Lambda</p>
                     <p>
                       We value your privacy and want to be clear about the data
                       we collect, how we use it, and your rights to control that
@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
                         data-wf-ao-click-engagement-tracking="true"
                         data-wf-element-id="b073e5e4-5544-85a0-b269-8e340a3642fa"
                       >
-                        team@scorecard.io
+                        team@lambda.io
                       </a>{" "}
                       anytime.
                     </p>
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
                     <p>
                       We only collect necessary personal information that you
                       voluntarily provide to us when using our website
-                      getscorecard.ai, or when you express an interest in our
+                      getlambda.ai, or when you express an interest in our
                       products and services. Here's a brief overview:
                     </p>
                     <ul role="list" className="list-disc">
@@ -165,7 +165,7 @@ export default function PrivacyPolicyPage() {
                         data-wf-ao-click-engagement-tracking="true"
                         data-wf-element-id="f240dcc8-4d41-450c-975d-2264abaa8e21"
                       >
-                        team@scorecard.io
+                        team@lambda.io
                       </a>
                       .
                     </p>

@@ -82,11 +82,11 @@ export default function BlogPage() {
                             href="/blog/scorecard-raises-3-75m-to-test-and-deploy-ai-agents-100x-faster"
                             className="blog-card_title heading-style-h4"
                           >
-                            Scorecard Raises $3.75M to Test and Deploy AI Agents
+                            Lambda Raises $3.75M to Test and Deploy AI Agents
                             100x Faster
                           </a>
                           <p className="blog-card_blurb text-label">
-                            Scorecard announces $3.75M seed funding to
+                            Lambda announces $3.75M seed funding to
                             revolutionize AI agent testing, enabling developers
                             to run tens of thousands of tests daily and ship
                             trusted AI 100x faster.

@@ -20,8 +20,7 @@ export function Footer() {
                   <img src="/logo.png" alt="" className="footer_logo-svg" />
                 </a>
                 <p className="footer_text heading-style-h5 max-30ch">
-                  We help teams build reliable AI with seamless testing,
-                  evaluation, and optimization.
+                We help teams build confidential blockchain applications with seamless encryption, zero-knowledge proofs, and privacy optimization.
                 </p>
               </div>
               <div className="footer_main-content-block">
@@ -37,9 +36,9 @@ export function Footer() {
                   >
                     <div className="form_header">
                       <div className="footer_text text-size-xsmall">
-                        Want to stay ahead in AI innovation?
+                      Want to stay ahead in Web3 privacy? 
                         <br />
-                        Subscribe for insights, updates and best practices
+                        Subscribe for insights, updates and best practices.
                       </div>
                     </div>
                     <div className="form_field-wrapper">

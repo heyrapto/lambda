@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Footer } from "~/components/sections/footer";
 
 export const meta = () => [
-  { title: "Whitepaper | Scorecard" },
+  { title: "Whitepaper | Lambda" },
   {
     name: "description",
     content:
-      "Read our comprehensive whitepaper on AI evaluation, testing, and continuous improvement",
+      "Read our comprehensive whitepaper on confidential blockchain applications, testing, and continuous improvement",
   },
 ];
 
@@ -224,7 +224,7 @@ const whitepaperContent: Record<
     content: (
       <div className="space-y-6!">
         <p className="text-gray-700">
-          The Scorecard evaluation platform is designed with a modular, scalable
+            The Lambda evaluation platform is designed with a modular, scalable
           architecture.
         </p>
         <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
@@ -402,7 +402,7 @@ const whitepaperContent: Record<
     content: (
       <div className="space-y-6!">
         <p className="text-gray-700">
-          A leading financial services company deployed Scorecard to evaluate
+          A leading financial services company deployed Lambda to evaluate
           their AI-powered trading algorithms across 50+ markets.
         </p>
         <div className="space-y-4!">
@@ -433,7 +433,7 @@ const whitepaperContent: Record<
     content: (
       <div className="space-y-6!">
         <p className="text-gray-700">
-          A technology company used Scorecard to evaluate and improve their
+          A technology company used Lambda to evaluate and improve their
           customer service LLM across 20 languages.
         </p>
         <div className="space-y-4!">

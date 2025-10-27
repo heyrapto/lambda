@@ -36,12 +36,11 @@ export function ControlSection() {
                 className="take-control_content"
               >
                 <h2 className="take-control_text">
-                  Take Control of AI Performance
+                Solve Your Privacy Concerns
                 </h2>
                 <div className="take-control_copy">
                   <p className="take-control_text subtitle-size-2">
-                    Join forward-thinking teams using Lambda to upgrade the way
-                    they build, test, and improve AI AGENTS.
+                  Join forward-thinking teams using Lambda to upgrade the way they build, test, and improve ENCRYPTED APPLICATIONS.
                   </p>
                   <a
                     className="button-primary w-inline-block"

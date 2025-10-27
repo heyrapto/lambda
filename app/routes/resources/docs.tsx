@@ -4,11 +4,11 @@ import { Footer } from "~/components/sections/footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Documentation | Scorecard" },
+    { title: "Documentation | Lambda" },
     {
       name: "description",
       content:
-        "Comprehensive documentation and guides for building with Scorecard",
+        "Comprehensive documentation and guides for building with Lambda",
     },
   ];
 }
@@ -67,14 +67,14 @@ const documentationContent: Record<
     content: (
       <div className="space-y-6!">
         <p className="text-lg leading-relaxed">
-          Welcome to Scorecard Documentation. This comprehensive guide will help
+          Welcome to Lambda Documentation. This comprehensive guide will help
           you get started with our platform and make the most of its powerful
           features.
         </p>
         <div>
-          <h3 className="text-xl font-semibold mb-4!">What is Scorecard?</h3>
+          <h3 className="text-xl font-semibold mb-4!">What is Lambda?</h3>
           <p className="text-gray-700 leading-relaxed">
-            Scorecard is a comprehensive platform designed to help you build,
+            Lambda is a comprehensive platform designed to help you build,
             test, and deploy AI applications with confidence. Our tools provide
             structured evaluation and continuous improvement capabilities for
             your AI systems.
@@ -117,13 +117,13 @@ const documentationContent: Record<
         <div>
           <h3 className="text-xl font-semibold mb-4!">Installation Guide</h3>
           <p className="text-gray-700 mb-4">
-            Get Scorecard up and running in minutes with our simple installation
+            Get Lambda up and running in minutes with our simple installation
             process.
           </p>
         </div>
         <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
           <p className="text-sm font-mono bg-white p-4 rounded border border-slate-300 overflow-x-auto">
-            npm install @scorecard/sdk
+            npm install @lambda/sdk
           </p>
         </div>
         <div>
@@ -131,7 +131,7 @@ const documentationContent: Record<
           <ul className="space-y-2! text-gray-700">
             <li>• Node.js 14.0 or higher</li>
             <li>• npm or yarn package manager</li>
-            <li>• Active Scorecard account</li>
+            <li>• Active Lambda account</li>
             <li>• API Key (obtain from your dashboard)</li>
           </ul>
         </div>
@@ -143,18 +143,18 @@ const documentationContent: Record<
     content: (
       <div className="space-y-6!">
         <p className="text-gray-700">
-          Get your first Scorecard integration running in under 5 minutes.
+          Get your first Lambda integration running in under 5 minutes.
         </p>
         <div className="space-y-4!">
           <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
             <p className="text-sm font-semibold mb-3">
-              Step 1: Initialize Scorecard
+              Step 1: Initialize Lambda
             </p>
             <pre className="bg-white p-4 rounded border border-slate-300 text-sm overflow-x-auto text-gray-800">
-              {`import { Scorecard } from '@scorecard/sdk';
+              {`import { Lambda } from '@lambda/sdk';
 
-const scorecard = new Scorecard({
-  apiKey: process.env.SCORECARD_API_KEY,
+const lambda = new Lambda({
+  apiKey: process.env.LAMBDA_API_KEY,
 });`}
             </pre>
           </div>
@@ -163,7 +163,7 @@ const scorecard = new Scorecard({
               Step 2: Create Your First Evaluation
             </p>
             <pre className="bg-white p-4 rounded border border-slate-300 text-sm overflow-x-auto text-gray-800">
-              {`const result = await scorecard.evaluate({
+              {`const result = await lambda.evaluate({
   input: "What is AI?",
   output: "AI is artificial intelligence...",
   criteria: ["accuracy", "relevance"],
@@ -283,7 +283,7 @@ const scorecard = new Scorecard({
     content: (
       <div className="space-y-6!">
         <p className="text-gray-700">
-          Integrate Scorecard into your existing workflows with our
+          Integrate Lambda into your existing workflows with our
           comprehensive SDKs and APIs.
         </p>
         <div className="space-y-4!">
@@ -305,7 +305,7 @@ const scorecard = new Scorecard({
     content: (
       <div className="space-y-6!">
         <p className="text-gray-700">
-          Use these tools and techniques to test and debug your Scorecard
+          Use these tools and techniques to test and debug your Lambda
           integration effectively.
         </p>
         <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
@@ -323,16 +323,16 @@ const scorecard = new Scorecard({
     content: (
       <div className="space-y-6!">
         <p className="text-gray-700">
-          Here's a simple example to get you started with Scorecard.
+          Here's a simple example to get you started with Lambda.
         </p>
         <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
           <pre className="bg-white p-4 rounded border border-slate-300 text-sm overflow-x-auto text-gray-800">
             {`// Basic evaluation example
-const scorecard = new Scorecard({
+const lambda = new Lambda({
   apiKey: 'your-api-key'
 });
 
-const evaluation = await scorecard.evaluate({
+const evaluation = await lambda.evaluate({
   input: "User input text",
   output: "Model output text",
   rubric: {
@@ -441,7 +441,7 @@ export default function DocsPage() {
                     Documentation
                   </h1>
                   <p className="text-lg text-gray-600">
-                    Everything you need to get started with Scorecard
+                    Everything you need to get started with Lambda
                   </p>
                 </div>
               </div>
