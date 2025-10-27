@@ -121,7 +121,7 @@ The implementation builds on three key technologies:
 
 ## Getting Started
 
-For λ users, connecting is now simpler than ever. Replace the placeholder \`MCP_SERVER_URL\` in your \`MCP.json\` file with the actual [URL value provided on GitHub](https://github.com/scorecard-ai/scorecard-mcp) e.g.:
+For λ users, connecting is now simpler than ever. Replace the placeholder \`MCP_SERVER_URL\` in your \`MCP.json\` file with the actual [URL value provided on GitHub](https://scorecard.ai) e.g.:
 
 \`\`\`javascript
 {

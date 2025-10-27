@@ -51,11 +51,13 @@ const navigationSections: NavigationSection[] = [
         id: "home",
         label: "Home",
         icon: <FiHome className="w-4 h-4" />,
+        href: "/resources/overview",
       },
       {
         id: "concepts",
         label: "Concepts",
         icon: <FiBookOpen className="w-4 h-4" />,
+        href: "/resources/concepts",
       },
       {
             id: "framework",
@@ -77,6 +79,7 @@ const navigationSections: NavigationSection[] = [
         id: "api-key",
         label: "Get an API key",
         icon: <FiKey className="w-4 h-4" />,
+        href: "/resources/api-key",
       },
       {
         id: "api-reference",
@@ -731,10 +734,10 @@ export default function WhitepaperPage() {
   return (
     <>
       <main className="main-wrapper is-padding-start">
-        <section className="py-12">
+        <section className="pb-12">
           <div className="padding-global">
             {/* Header */}
-            <div className="mb-12!">
+            {/* <div className="mb-12!">
               <div className="container-xlarge">
                 <div className="mb-8! space-y-5!">
                   <h1 className="text-5xl font-bold text-gray-900 mb-3">
@@ -746,15 +749,15 @@ export default function WhitepaperPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Main Content Area */}
             <div className="container-xlarge flex gap-12">
               {/* Sidebar Navigation */}
-              <aside className="w-64 shrink-0">
+              <aside className="w-64 shrink-0 overflow-y-auto max-h-[calc(100vh-240px)]">
                 <div className="sticky top-24">
                   {/* Search */}
-                  <div className="mb-6">
+                  {/* <div className="mb-6">
                     <input
                       type="text"
                       placeholder="Search whitepaper..."
@@ -762,7 +765,7 @@ export default function WhitepaperPage() {
                       onChange={(e) => setSearchQuery(e.target.value)}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent bg-white"
                     />
-                  </div>
+                  </div> */}
 
                   {/* Navigation */}
                   <nav className="space-y-6">

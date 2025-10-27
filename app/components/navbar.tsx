@@ -163,7 +163,7 @@ export function Navbar() {
                       <div className="nav_menu-button-wrapper">
                         <a
                           className="button-primary w-inline-block"
-                          href="https://app.getscorecard.ai/"
+                          href="/"
                           aria-label="login"
                           role="button"
                         >

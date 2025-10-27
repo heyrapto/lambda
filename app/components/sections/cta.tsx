@@ -16,7 +16,7 @@ export function CTASection() {
                   data-wf-component-context="%5B%7B%22componentId%22%3A%2286972f3c-c6e1-6e49-21d0-0dd24071d3e0%22%2C%22instanceId%22%3A%2286972f3c-c6e1-6e49-21d0-0dd24071d3f1%22%7D%2C%7B%22componentId%22%3A%22b4d05707-5080-4fcb-8c01-6a13b4c7bf00%22%2C%22instanceId%22%3A%2286972f3c-c6e1-6e49-21d0-0dd24071d3eb%22%7D%5D"
                   data-wf-element-id="b4d05707-5080-4fcb-8c01-6a13b4c7bf00"
                   data-wf-event-ids="157055388"
-                  href="https://docs.scorecard.io/docs/documentation/how-to-use-scorecard/guides/run-scoring/using-the-playground"
+                  href="/"
                   aria-label="Go to Scorecard Docs page"
                   role="button"
                   data-wf-native-id-path="86972f3c-c6e1-6e49-21d0-0dd24071d3f1:86972f3c-c6e1-6e49-21d0-0dd24071d3eb:b4d05707-5080-4fcb-8c01-6a13b4c7bf00"

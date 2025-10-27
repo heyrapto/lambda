@@ -204,7 +204,7 @@ export function Footer() {
               <div className="footer_git-link-wrapper">
                 <a
                   aria-label="Visit our Github"
-                  href="https://github.com/scorecard-ai"
+                  href="/"
                   target="_blank"
                   className="footer_primary-link"
                 >
@@ -213,7 +213,7 @@ export function Footer() {
               </div>
               <a
                 aria-label="Go to our LinkedIn profile"
-                href="https://www.linkedin.com/company/scorecard-ai/"
+                href="/"
                 target="_blank"
                 className="footer_primary-link"
               >
