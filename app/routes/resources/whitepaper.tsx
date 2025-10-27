@@ -32,42 +32,44 @@ interface NavItem {
   label: string;
   icon?: React.ReactNode;
   children?: NavItem[];
+  href?: string;
 }
 
 interface NavigationSection {
   section?: string;
-  items: NavItem[];
+  items?: NavItem[];
+  href?: string;
+  icon?: React.ReactNode;
+  matches?: boolean;
 }
 
 const navigationSections: NavigationSection[] = [
   {
+    section: "Overview",
     items: [
       {
-        id: "overview",
-        label: "Overview",
-        icon: <FiFileText className="w-4 h-4" />,
-        children: [
-          { id: "executive-summary", label: "Executive Summary" },
-          { id: "introduction", label: "Introduction" },
-          { id: "problem-statement", label: "Problem Statement" },
-        ],
+        id: "home",
+        label: "Home",
+        icon: <FiHome className="w-4 h-4" />,
       },
-    ],
-  },
-  {
-    items: [
       {
-        id: "framework",
-        label: "Framework",
+        id: "concepts",
+        label: "Concepts",
         icon: <FiBookOpen className="w-4 h-4" />,
-        children: [
-          { id: "methodology", label: "Methodology" },
-          { id: "architecture", label: "Architecture" },
-          { id: "evaluation-metrics", label: "Evaluation Metrics" },
-        ],
       },
-    ],
+      {
+            id: "framework",
+            label: "Framework",
+            icon: <FiBookOpen className="w-4 h-4" />,
+            children: [
+              { id: "methodology", label: "Methodology" },
+              { id: "architecture", label: "Architecture" },
+              { id: "evaluation-metrics", label: "Evaluation Metrics" },
+            ],
+          },
+    ]
   },
+  
   {
     section: "APIs",
     items: [
@@ -645,27 +647,40 @@ export default function WhitepaperPage() {
     }));
   };
 
-  const filteredNavSections = navigationSections.map((section) => ({
-    ...section,
-    items: section.items
-      .map((item) => {
-        const matchesSearch = item.label
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase());
-        const filteredChildren = item.children?.filter((child) =>
-          child.label.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-        const hasMatchingChildren =
-          filteredChildren && filteredChildren.length > 0;
+  const filteredNavSections = navigationSections.map((section) => {
+    // If section has href/icon but no items, it's a standalone link
+    if (section.href && section.icon && !section.items) {
+      const matchesSearch = section.section?.toLowerCase().includes(searchQuery.toLowerCase());
+      return { ...section, items: [], matches: matchesSearch };
+    }
+    
+    // Otherwise, it's a section with items
+    const filteredItems = section.items?.map((item) => {
+      const matchesSearch = item.label
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+      const filteredChildren = item.children?.filter((child) =>
+        child.label.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      const hasMatchingChildren =
+        filteredChildren && filteredChildren.length > 0;
 
-        return {
-          ...item,
-          children: filteredChildren,
-          matches: matchesSearch || hasMatchingChildren,
-        };
-      })
-      .filter((item) => item.matches),
-  })).filter((section) => section.items.length > 0);
+      return {
+        ...item,
+        children: filteredChildren,
+        matches: matchesSearch || hasMatchingChildren,
+      };
+    }).filter((item) => item.matches);
+
+    return {
+      ...section,
+      items: filteredItems,
+      matches: true,
+    };
+  }).filter((section) => {
+    // Show section if it has href (standalone) or has filtered items
+    return section.matches && ((section.href && !section.items) || (section.items && section.items.length > 0));
+  });
 
   const handleItemClick = (itemId: string) => {
     // Only set selectedId if content exists for this item
@@ -715,19 +730,31 @@ export default function WhitepaperPage() {
 
                   {/* Navigation */}
                   <nav className="space-y-6">
-                    {filteredNavSections.map((section) => (
-                      <div key={section.section}>
+                    {filteredNavSections.map((section, idx) => (
+                      <div key={section.section || `section-${idx}`}>
+                        {/* Standalone section link (Home, Concepts, etc.) */}
+                        {section.href && section.icon && (
+                          <a
+                            href={section.href}
+                            className="w-full flex items-center gap-2 px-3 py-2 text-sm font-medium rounded transition-all duration-200 text-gray-900 hover:bg-gray-100"
+                          >
+                            <span className="shrink-0">{section.icon}</span>
+                            <span>{section.section}</span>
+                          </a>
+                        )}
+                        
                         {/* Section Header */}
-                        {section.section && (
+                        {!section.href && section.section && (
                           <span className="px-3 py-2 text-sm font-bold text-gray-900 uppercase tracking-wide">
                             {section.section}
                           </span>
                         )}
                         
                         {/* Section Items */}
-                        <div className="space-y-1">
-                          {section.items.map((item) => (
-                            <div key={item.id}>
+                        {section.items && section.items.length > 0 && (
+                          <div className="space-y-1">
+                            {section.items.map((item) => (
+                              <div key={item.id}>
                               {item.children ? (
                                 <>
                                   <button
@@ -791,9 +818,10 @@ export default function WhitepaperPage() {
                                   <span className="text-left">{item.label}</span>
                                 </button>
                               )}
-                            </div>
-                          ))}
-                        </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ))}
                   </nav>
