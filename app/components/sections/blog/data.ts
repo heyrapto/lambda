@@ -81,7 +81,7 @@ The MCP community has been vocal about what changed. "Auth being fixed is HUGE" 
 
 Our original implementation required custom OAuth flows, manual token management, and complex state handling. The new MCP spec with standardized authentication reduced our implementation significantly.
 
-With Clerk's MCP integration and Vercel's adapter, the [complete MCP route handler](https://github.com/scorecard-ai/scorecard-mcp) is now 70 lines (down from 1000+) and our current auth implementation is now:
+With Clerk's MCP integration and Vercel's adapter, the [complete MCP route handler](https://github.com/) is now 70 lines (down from 1000+) and our current auth implementation is now:
 
 \`\`\`javascript
 // Authentication wrapper - Clerk handles OAuth complexity
